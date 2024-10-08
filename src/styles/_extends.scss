@@ -1,0 +1,39 @@
+%flex-center {
+    @include flex-center;
+}
+
+%flex-start {
+    @include flex-start;
+}
+
+%flex-end {
+    @include flex-end;
+}
+
+%flex-between {
+    @include flex-between;
+}
+
+%flex-around {
+    @include flex-around;
+}
+
+%flex-column-center {
+    @include flex-column-center;
+}
+
+%flex-column-start {
+    @include flex-column-start;
+}
+
+%flex-column-end {
+    @include flex-column-end;
+}
+
+%flex-column-between {
+    @include flex-column-between;
+}
+
+%flex-column-around {
+    @include flex-column-around;
+}

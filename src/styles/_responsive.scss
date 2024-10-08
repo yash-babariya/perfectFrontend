@@ -1,0 +1,84 @@
+// End Generation Here
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container-lg {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-md {
+        max-width: 720px;
+    }
+
+    .u-flex-column-center {
+        @extend %flex-column-center;
+    }
+
+    .u-flex-column-start {
+        @extend %flex-column-start;
+    }
+
+    .u-flex-column-end {
+        @extend %flex-column-end;
+    }
+
+    .u-flex-column-between {
+        @extend %flex-column-between;
+    }
+
+    .u-flex-column-around {
+        @extend %flex-column-around;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-sm {
+        max-width: 540px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.875rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+
+    blockquote {
+        font-size: 0.875rem;
+    }
+
+    code,
+    pre {
+        font-size: 0.75rem;
+    }
+}
