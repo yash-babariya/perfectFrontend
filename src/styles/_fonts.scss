@@ -1,14 +1,23 @@
 @font-face {
-    font-family: 'cocona-regular';
-    src: url('../assets/fonts/Coconat-Regular.otf');
+    font-family: 'Coconat Regular';
+    src: url('../assets/fonts/Coconat-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Coconat-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'cocona-bold';
-    src: url('../assets/fonts/Coconat-Bold.otf');
+    font-family: 'Coconat Bold';
+    src: url('../assets/fonts/Coconat-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Coconat-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-    font-family: 'cocona-demi';
-    src: url('../assets/fonts/Coconat-Demi.otf');
+    font-family: 'Coconat Demi';
+    src: url('../assets/fonts/Coconat-Demi.woff2') format('woff2'),
+        url('../assets/fonts/Coconat-Demi.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
 }

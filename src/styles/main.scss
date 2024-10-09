@@ -1,13 +1,22 @@
 @import './mixins';
 @import './extends';
 @import './reset';
-@import './typography';
-@import './utilities';
 @import './animations';
-@import './transitions';
-@import './responsive';
 @import './container';
 @import './grid';
-@import './spacing';
 @import './theme';
 @import './fonts';
+
+.app {
+    background-color: var(--theme-primary-bg);
+    height: 100vh;
+    @extend %flex-center;
+
+
+
+    h1 {
+        font-family: 'cocona-demi';
+        font-size: 300px;
+        color: var(--theme-white-text);
+    }
+}

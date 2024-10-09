@@ -1,0 +1,235 @@
+@import '../../styles/main.scss';
+
+.header {
+    background-color: var(--theme-primary-light-bg);
+    border-bottom: 1px solid var(--theme-primary-light-border);
+
+    &__top {
+        @extend %flex-between;
+        padding: 16px 0;
+    }
+
+    &__logo {
+        font-family: 'Coconat Bold';
+        font-size: 32px;
+        color: var(--theme-primary-text);
+    }
+
+    &__nav {
+        &-list {
+            @extend %flex-center;
+            gap: 24px;
+
+            a {
+                color: var(--theme-primary-dark-text);
+                font-family: 'Coconat Regular';
+                transition: color 0.3s ease, transform 0.2s ease;
+
+                &:hover {
+                    color: var(--theme-primary-text);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    &__search {
+        position: relative;
+
+        input {
+            padding: 8px 40px 8px 16px;
+            border: 1px solid var(--theme-primary-border);
+            border-radius: 4px;
+            width: 250px;
+            transition: box-shadow 0.3s ease;
+
+            &:focus {
+                box-shadow: 0 0 0 2px var(--theme-primary-light-border);
+                outline: none;
+            }
+        }
+
+        &-icon {
+            cursor: pointer;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--theme-primary-dark-text);
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover &-icon {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        &--large {
+            flex-grow: 1;
+            margin: 0 20px;
+
+            input {
+                width: 100%;
+                padding: 12px 40px 12px 20px; // Adjusted right padding
+                font-size: 16px;
+            }
+
+            .header__search-icon {
+                right: 16px; // Adjusted position for larger search
+            }
+        }
+    }
+
+    &__actions {
+        @extend %flex-center;
+        gap: 24px;
+    }
+
+    &__location,
+    &__phone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--theme-primary-dark-text);
+        font-family: 'Coconat Regular';
+        font-size: 14px;
+        transition: color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--theme-primary-text);
+            transform: translateY(-2px);
+        }
+
+        svg {
+            font-size: 20px;
+        }
+    }
+
+    &__account,
+    &__wishlist,
+    &__cart {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--theme-primary-dark-text);
+        transition: color 0.3s ease, transform 0.2s ease;
+        font-size: 20px;
+
+        &:hover {
+            color: var(--theme-primary-text);
+            transform: translateY(-2px);
+        }
+    }
+
+    &__categories {
+        background-color: var(--theme-primary-bg);
+        position: relative;
+
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+
+            padding: 0 16px; // Add horizontal padding
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 8px 16px;
+            color: var(--theme-primary-light-text);
+            font-family: 'Coconat Regular';
+            font-size: 18px;
+            transition: transform 0.2s ease, color 0.3s ease, background-color 0.3s ease;
+            white-space: nowrap;
+            position: relative; // For pseudo-element
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background-color: var(--theme-primary-text);
+                transition: width 0.3s ease, left 0.3s ease;
+            }
+
+            &:hover::after,
+            &.active::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+}
+
+
+.header__search-container {
+    position: relative;
+}
+
+.header__search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Add shadow for depth
+
+    li {
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid #eee; // Separator between items
+        }
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}
+
+// Add responsive styles
+@media (max-width: 768px) {
+    .header {
+        &__top {
+            flex-wrap: wrap;
+        }
+
+        &__search {
+            order: 3;
+            width: 100%;
+            margin-top: 16px;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        &__actions {
+            order: 2;
+        }
+
+        &__categories-list {
+            justify-content: flex-start;
+        }
+    }
+}

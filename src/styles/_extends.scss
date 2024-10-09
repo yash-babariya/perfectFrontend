@@ -37,3 +37,52 @@
 %flex-column-around {
     @include flex-column-around;
 }
+
+
+
+
+
+
+
+
+
+
+.flex-center {
+    @extend %flex-center;
+}
+
+.flex-start {
+    @extend %flex-start;
+}
+
+.flex-end {
+    @extend %flex-end;
+}
+
+.flex-between {
+    @extend %flex-between;
+}
+
+.flex-around {
+    @extend %flex-around;
+}
+
+.flex-column-center {
+    @extend %flex-column-center;
+}
+
+.flex-column-start {
+    @extend %flex-column-start;
+}
+
+.flex-column-end {
+    @extend %flex-column-end;
+}
+
+.flex-column-between {
+    @extend %flex-column-between;
+}
+
+.flex-column-around {
+    @extend %flex-column-around;
+}

@@ -1,10 +1,12 @@
 import React from 'react'
 import './styles/main.scss'
+import { RouterProvider } from 'react-router-dom'
+import router from './routes'
 
 function App() {
   return (
-    <div className='container'>
-      <h1 className='u-text-center'>Hello World</h1>
+    <div>
+      <RouterProvider router={router} />
     </div>
   )
 }
