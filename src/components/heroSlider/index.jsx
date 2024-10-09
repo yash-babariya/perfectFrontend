@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import Slider from 'react-slick'
 import { FiShoppingBag } from 'react-icons/fi'
 import './heroSlider.scss'
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import slide1 from '../../assets/images/sliderImg/slider1.jpg'
 import slide2 from '../../assets/images/sliderImg/slider2.jpg'
 import slide3 from '../../assets/images/sliderImg/slider3.jpg'
@@ -58,10 +59,35 @@ export default function HeroSlider() {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
         beforeChange: (current, next) => setCurrentSlide(next),
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     };
 
     const nextSlides = () => {
@@ -75,13 +101,9 @@ export default function HeroSlider() {
     return (
         <div className='container'>
             <div className='hero-slider'>
-                <div className="hero-slider__content">
-                    <h2>FURNITURE AND ACCESSORIES FOR A MODERN INTERIOR</h2>
-                    <p>Use our ideas to create an interior that suits you.</p>
-                </div>
                 <div className="hero-slider__main">
                     <Slider ref={sliderRef} {...settings} className="hero-slider__slides">
-                        {slides.map((slide, index) => (
+                        {slides.map((slide) => (
                             <div className='hero-slider__slide-wrapper' key={slide.id}>
                                 <div className="hero-slider__slide">
                                     <img src={slide.image} alt={`Slide ${slide.id}`} />
@@ -95,11 +117,11 @@ export default function HeroSlider() {
                     <div className="hero-slider__controls">
                         <div className="hero-slider__counter">
                             <span>{currentSlide + 1}</span>
-                            <span>———{slides.length}</span>
+                            <span>—{slides.length}</span>
                         </div>
                         <div className="hero-slider__arrows">
-                            <button onClick={prevSlides}>←</button>
-                            <button onClick={nextSlides}>→</button>
+                            <button onClick={prevSlides}><GoArrowLeft /></button>
+                            <button onClick={nextSlides}><GoArrowRight /></button>
                         </div>
                     </div>
                 </div>
